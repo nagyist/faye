@@ -24,10 +24,10 @@ clean:
 	rm -rf build *.gem spec/*_bundle.js{,.map}
 
 $(client_dir)/$(name).js: $(webpack_config) $(source_files)
-	webpack
+	webpack;
 
 $(client_dir)/$(name)-min.js: $(webpack_config) $(source_files)
-	NODE_ENV=production webpack
+	NODE_ENV=production webpack;
 
 build/src: $(source_files) build
 	rsync -a src/ $@/
